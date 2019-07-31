@@ -200,7 +200,7 @@ if __name__ == "__main__":
     parser.add_argument('-o', '--outpath', type=str, required=True,
                         help='The path to the project folder, where the folders will be created')
     parser.add_argument('-in', '--sites_of_interest', type=str, default=None, required=False,
-                        help='The path and file name of the csv file with neut data from lanl')
+                        help='The path and file name of the csv file with sites to inclue in column with heading "sites"')
     parser.add_argument('-f', '--fasta_file', required=False, type=str,
                         help='The path and name of the aligned and translated fasta file of virus sequences')
     parser.add_argument('-s', '--start', default=1, type=int,
