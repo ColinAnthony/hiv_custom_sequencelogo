@@ -178,7 +178,7 @@ def main(path_to_weblogo, path, sites_of_interest, fasta_file, start, color_sche
 
     web_logo_cmd = f"{path_to_weblogo_install} --fin {fasta_outfile} --datatype fasta " \
         f"--fout {logo_outfile}.png --format png --sequence-type protein --units probability --size large " \
-        f"--title '{title}' --xlabel '{x_label}' --annotate '{sites}' --ylabel 'Frequency' " \
+        f"--title '{title}' --xlabel '{x_label}' --annotate '{sites}' --ylabel 'Probability' " \
         f"--color-scheme {color_scheme} --fontsize 12  --title-fontsize 14 --text-font ArialMT " \
         f"--logo-font ArialMT --title-font ArialMT --resolution 600"
     try:
