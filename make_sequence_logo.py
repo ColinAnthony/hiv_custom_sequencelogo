@@ -107,7 +107,7 @@ def main(path_to_weblogo, path, sites_of_interest, fasta_file, start, color_sche
     :param color_scheme: (str) the name of the color scheme to use for the logo
     :param title: (str) the title for the sequence logo
     :param x_label: (str) the x-axis label for the sequence logo
-    :returns: a fasta file with the sites used to make the logo, a png file of the sequence logo
+    :returns: a fasta file with the sites used to make the logo, a pdf file of the sequence logo
     """
     weblogo_path = pathlib.Path(path_to_weblogo).absolute()
     path = pathlib.Path(path).absolute()
@@ -177,10 +177,10 @@ def main(path_to_weblogo, path, sites_of_interest, fasta_file, start, color_sche
     path_to_weblogo_install = pathlib.Path(weblogo_path, "weblogo")
 
     web_logo_cmd = f"{path_to_weblogo_install} --fin {fasta_outfile} --datatype fasta " \
-        f"--fout {logo_outfile}.png --format png --sequence-type protein --units probability --size large " \
-        f"--title '{title}' --xlabel '{x_label}' --annotate '{sites}' --ylabel 'Frequency' " \
+        f"--fout {logo_outfile}.pdf --format pdf --sequence-type protein --units probability --size large " \
+        f"--title '{title}' --xlabel '{x_label}' --annotate '{sites}' --ylabel 'Probability' " \
         f"--color-scheme {color_scheme} --fontsize 12  --title-fontsize 14 --text-font ArialMT " \
-        f"--logo-font ArialMT --title-font ArialMT --resolution 600"
+        f"--logo-font ArialMT --title-font ArialMT --resolution 600 --fineprint '' --scale-width no"
     try:
         subprocess.call(web_logo_cmd, shell=True)
     except subprocess.CalledProcessError as e:
